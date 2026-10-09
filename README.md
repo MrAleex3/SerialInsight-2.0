@@ -1,60 +1,42 @@
-<h1 align="center">SerialInsight 2.0</h1>
+# SerialInsight 2.0
 
-<p align="center">
-  Una actualización para mi herramienta interna desarrollada para automatizar la gestión y corrección de logs de pruebas funcionales. Eliminar el proceso manual de buscar, editar y transferir logs de equipos al servidor final y agiliza el envío de unidades a reparación. Se integra con Shopfloor para validar la estacion actual del numero de serie de la unidad antes y después de cada movimiento, todo desde una interfaz web moderna.
-</p>
+Versión web de SerialInsight, herramienta interna para automatizar la gestión y corrección de logs de pruebas funcionales. Elimina el proceso manual de buscar, editar y transferir logs de los equipos al servidor final, y agiliza el envío de unidades a reparación. Se integra con Shopfloor para validar la estación actual del número de serie antes y después de cada movimiento.
 
-<p align="center">
-  <a href="#quick-start">Quick Start</a> ·
-  <a href="Funcionalidades.md">Interfaz y funcionalidades</a> ·
-  <a href="#estructura-del-proyecto">Estructura</a> ·
-  <a href="https://github.com/MrAleex3/SerialTrace-for-Foxconn">Versión Anterior</a>
-</p>
+- [Versión anterior (SerialInsight 1.0)](https://github.com/MrAleex3/SerialTrace-for-Foxconn)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.9%2B-blue" alt="Python">
-  <img src="https://img.shields.io/badge/Framework-Flask-green" alt="Flask">
-  <img src="https://img.shields.io/badge/Server-Waitress-red" alt="Server">
-  <img src="https://img.shields.io/badge/Status-Production-success" alt="Status">
-</p>
+![Vista principal](https://github.com/user-attachments/assets/9217e677-aa8e-47f7-bc6e-54750c0a9518)
 
-<p align="center">
-<img width="1347" height="680" alt="image" src="https://github.com/user-attachments/assets/9217e677-aa8e-47f7-bc6e-54750c0a9518" />
-</p>
+## Origen del proyecto
 
----
+SerialInsight nació como solución a un proceso que se había vuelto tedioso, confuso y problemático: mover logs de unidades desde un servidor de pruebas funcionales hasta el servidor de la siguiente estación. Constantemente teníamos problemas por enviar logs incorrectos o duplicarlos accidentalmente, así que decidí crear una herramienta para erradicar ese tipo de confusiones.
 
-## El Origen del Proyecto
+Al principio la herramienta era muy básica. Empezó como un script de AutoHotkey que automatizaba el proceso con solo ingresar el número de serie y seleccionar la acción deseada. Funcionó así durante casi medio año, con un launcher `.bat` que se conectaba a una ruta de mi servidor local y copiaba la última versión de la aplicación para que todos los usuarios tuvieran la versión actualizada.
 
-SerialInsight nació como solución a un proceso que se había vuelto tedioso, confuso y problemático: mover logs de unidades desde un servidor de pruebas funcionales hasta el sevidor de la siguiente estacion. Constantemente lidiábamos con problemas por enviar logs incorrectos o duplicarlos accidentalmente, por lo que me me dio la idea de crear una herramienta para tratar de erradicar este tipo de confusiones.
+Para evitar problemas de ciberseguridad por estar distribuyendo y ejecutando archivos `.exe` en una red corporativa, decidí migrarla a una plataforma web. SerialInsight fue mi primera aplicación web y sirvió como base e inspiración para crear la suite de herramientas actual, como FVS Monitor.
 
-Al principio, la herramienta era muy básica. Empezó como un script de *AutoHotKey* que automatizaba el proceso con solo ingresar el número de serie y seleccionar la acción deseada. Funcionó así durante casi medio año, utilizando un launcher `.bat` que se conectaba a una ruta de mi servidor local y copiaba la última versión de la aplicación para que todos los usuarios tuvieran la version actualizada.
+El objetivo principal de esta herramienta, y de las que le siguieron, es optimizar y facilitar el trabajo diario: dejar de navegar entre carpetas, servidores y páginas web distintas, reducir el proceso a unos cuantos clics y eliminar el problema de buscar, actualizar y enviar logs entre servidores, concentrando toda la información, los logs y el historial en una sola pantalla.
 
-pero para evitar problemas de cyberseguridad por estar distribuyendo y ejecutando archivos `.exe` en una red corporativa, decidí migrarla a una plataforma web. **SerialInsight fue mi primera aplicación web** y sirvió como la base e inspiración para crear toda mi suite de herramientas actuales (como FVS Monitor). 
+Con la versión web se conservó la misma funcionalidad del script original y se agregaron:
 
-El objetivo principal de esta herramienta (y de todas las que le siguieron) es optimizar y facilitarnos "la vida" en el trabajo. Buscando que dejemos de navegar entre un montón de carpetas, servidores y páginas web distintas, facilitando el proceso a unos cuantos clicks y eliminando el principal problema que teniamos que era el problema de buscar, actualizar y enviar logs entre servidores. Concentrando toda la informacion, logs e historial en una sola pantalla, a un solo click.
+- Integración con Shopfloor: consulta el estado y la estación de la unidad antes y después de realizar el proceso.
+- Control de accesos: registro y control de usuarios.
+- Logs de auditoría: registro para saber quién y cuándo generó un flujo.
+- Tablero de anuncios: apartado para notificar cambios en la plataforma y consejos de uso.
+- Validación de datos: filtros para evitar capturar información incorrecta por error humano.
 
-Con esta actualización web se conservó exactamente la misma funcionalidad que el script original, pero se agregaron nuevas características como:
+El desarrollo de SerialInsight 1.0, el script, comenzó el 20 de junio de 2025. Esta versión web inició sus primeras pruebas en piso el 4 de enero de 2026 y actualmente acumula más de 13,000 logs generados.
 
-- **Integración con Shopfloor:** Consulta el estado y la estación de la unidad antes y después de realizar el proceso.
-- **Control de accesos:** Registro y control de usuarios.
-- **Logs de Auditoría:** Registro de monitoreo para saber quién y cuándo generó un flujo. 
-- **Tablero de anuncios:** Un pequeño apartado para notificar cambios en la plataforma, consejos de uso, etc.
-- **Validación de datos:** Filtros integrados para evitar colocar información incorrecta por error humano.
+## Puesta en marcha
 
-> **Nota histórica:** El desarrollo de SerialInsight 1.0 (el script) comenzó el 20 de junio de 2025. Esta nueva versión web inició sus primeras pruebas en piso el 4 de enero de 2026, abriendo camino junto a sus aplicaciones hermanas como *FVS MONITOR* y actualmente con mas de 13,000 logs generados.
+SerialInsight lee los logs directamente desde las carpetas de red donde las estaciones de prueba suben sus archivos. Solo hay que dar acceso a esas rutas y levantar la aplicación.
 
----
+**1. Mapear las rutas de red**
 
-## Quick Start
+El equipo donde correrá el sistema debe tener conexión y permisos de lectura hacia las unidades de red o servidores de las estaciones de prueba.
 
-Serialinsight funciona leyendo los logs directamente desde las carpetas de red donde las estaciones de pruebas suben sus archivos, solo necesitas darle acceso a esas rutas y levantar la app.
+**2. Configurar las rutas**
 
-**1. Mapear las rutas de red**  
-El equipo donde correra el sistema debe tener conexión y permisos de lectura hacia las unidades de red o servidores de las estaciones de prueba.
-
-**2. Configurar las rutas**  
-Abre el archivo `rutas.ini` y define las direcciones a monitorear. Puedes agregar tantas rutas como necesites, apagarlas o encenderlas usando el parametro `Enabled`.
+En el archivo `rutas.ini` se definen las direcciones a monitorear. Se pueden agregar tantas rutas como se necesiten y activarlas o desactivarlas con el parámetro `Enabled`.
 
 ```ini
 [General]
@@ -67,28 +49,33 @@ Enabled = True
 [Route_2]
 Path = \\RutaDeServidor\EquipoPruebas
 Enabled = True
-
 ```
 
-## Features
+## Características
 
-### 1. Busqueda Inteligente de Logs
-- **Modo Dual:** Soporte para busqueda en 2 servidores.
-- **Lectura en Tiempo Real:** Identifica automaticamente el archivo de log mas reciente en el servidor remoto y filtra la informacion relevante.
-- **Visualizacion Clara:** Muestra los datos como el `ID del equipo de prueba`, `Hora`, `Status`, `Prueba` y `Resultado`.
+### Búsqueda inteligente de logs
 
-### 2. Historial Extendido (PPID+)
-- **Busqueda Profunda:** Puede rastrear un serial especifico en logs de **hace 7 dias o hasta 30 dias atras**.
+- Modo dual: soporte para búsqueda en 2 servidores.
+- Lectura en tiempo real: identifica automáticamente el archivo de log más reciente en el servidor remoto y filtra la información relevante.
+- Visualización clara: muestra el ID del equipo de prueba, la hora, el status, la prueba y el resultado en una lista ordenada.
 
-### 3. Gestion de Debug y Validaciones (PASS/FAIL)
-- **Interaccion Directa:** Al hacer doble clic en un resultado, se habilitan acciones que se pueden realizar para ese serial.
-- **Inyeccion de Resultados:**
-  - **Generar FAIL:** Permite forzar el fallo de una unidad y subir el log actualizado al servidor destino.
-  - **Generar PASS:** Permite dar el pase a una unidad.
-- **Manejo de System ID (Debug):** Detecta automaticamente los equipos de prueba en estado de depuracion y solicita al usuario el ID correcto antes de procesar el log.
+### Historial extendido (PPID+)
 
-### 4. Auditoría y Seguridad
-- **Logging de Eventos:** Cada accion queda registrada en un servidor central de auditoría con:
-  - Fecha y Hora.
-  - Usuario e IP.
-  - Serial e ID del equipo de pruebas utilizado.
+- Búsqueda profunda: puede rastrear un serial específico en logs de hace 7 hasta 30 días.
+
+### Gestión de debug y validaciones (PASS/FAIL)
+
+- Interacción directa: al hacer doble clic en un resultado se habilitan las acciones disponibles para ese serial.
+- Inyección de resultados:
+  - Generar FAIL: fuerza el fallo de una unidad y sube el log actualizado al servidor destino.
+  - Generar PASS: da el pase a una unidad.
+- Manejo de System ID (debug): detecta automáticamente los equipos de prueba en estado de depuración y solicita al usuario el ID correcto antes de procesar el log.
+
+### Auditoría y seguridad
+
+- Registro de eventos: cada acción queda registrada en un servidor central de auditoría con fecha, hora, usuario, IP, serial e ID del equipo de prueba utilizado.
+
+## Autor
+
+Alejandro Espinoza
+Foxconn México
