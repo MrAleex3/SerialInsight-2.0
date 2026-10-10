@@ -2,6 +2,11 @@
 
 Versión web de SerialInsight, herramienta interna para automatizar la gestión y corrección de logs de pruebas funcionales. Elimina el proceso manual de buscar, editar y transferir logs de los equipos al servidor final, y agiliza el envío de unidades a reparación. Se integra con Shopfloor para validar la estación actual del número de serie antes y después de cada movimiento.
 
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
+![Flask](https://img.shields.io/badge/Framework-Flask-green)
+![Server](https://img.shields.io/badge/Server-Waitress-red)
+![Status](https://img.shields.io/badge/Status-Production-success)
+
 - [Versión anterior (SerialInsight 1.0)](https://github.com/MrAleex3/SerialTrace-for-Foxconn)
 
 ![Vista principal](https://github.com/user-attachments/assets/9217e677-aa8e-47f7-bc6e-54750c0a9518)
