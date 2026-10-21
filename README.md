@@ -24,7 +24,7 @@ El objetivo principal de esta herramienta, y de las que le siguieron, es optimiz
 
 Con la versión web se conservó la misma funcionalidad del script original y se agregaron la integración con Shopfloor, el control de accesos, los logs de auditoría, el tablero de anuncios y la validación de datos para evitar capturar información incorrecta por error humano.
 
-El desarrollo de SerialInsight 1.0, el script, comenzó el 20 de junio de 2025. Esta versión web inició sus primeras pruebas en piso el 4 de enero de 2026 y actualmente acumula más de 13,000 logs generados.
+El desarrollo de SerialInsight 1.0, el script, comenzó el 20 de junio de 2025. Esta versión web inició sus primeras pruebas en piso el 4 de enero de 2026 y actualmente acumula más de 16,000 logs generados.
 
 ## Puesta en marcha
 
