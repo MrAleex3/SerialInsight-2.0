@@ -7,6 +7,7 @@ Versión web de SerialInsight, herramienta interna para automatizar la gestión 
 ![Server](https://img.shields.io/badge/Server-Waitress-red)
 ![Status](https://img.shields.io/badge/Status-Production-success)
 
+- [Interfaz y funcionalidades](Funcionalidades.md)
 - [Versión anterior (SerialInsight 1.0)](https://github.com/MrAleex3/SerialTrace-for-Foxconn)
 
 ![Vista principal](https://github.com/user-attachments/assets/9217e677-aa8e-47f7-bc6e-54750c0a9518)
@@ -21,13 +22,7 @@ Para evitar problemas de ciberseguridad por estar distribuyendo y ejecutando arc
 
 El objetivo principal de esta herramienta, y de las que le siguieron, es optimizar y facilitar el trabajo diario: dejar de navegar entre carpetas, servidores y páginas web distintas, reducir el proceso a unos cuantos clics y eliminar el problema de buscar, actualizar y enviar logs entre servidores, concentrando toda la información, los logs y el historial en una sola pantalla.
 
-Con la versión web se conservó la misma funcionalidad del script original y se agregaron:
-
-- Integración con Shopfloor: consulta el estado y la estación de la unidad antes y después de realizar el proceso.
-- Control de accesos: registro y control de usuarios.
-- Logs de auditoría: registro para saber quién y cuándo generó un flujo.
-- Tablero de anuncios: apartado para notificar cambios en la plataforma y consejos de uso.
-- Validación de datos: filtros para evitar capturar información incorrecta por error humano.
+Con la versión web se conservó la misma funcionalidad del script original y se agregaron la integración con Shopfloor, el control de accesos, los logs de auditoría, el tablero de anuncios y la validación de datos para evitar capturar información incorrecta por error humano.
 
 El desarrollo de SerialInsight 1.0, el script, comenzó el 20 de junio de 2025. Esta versión web inició sus primeras pruebas en piso el 4 de enero de 2026 y actualmente acumula más de 13,000 logs generados.
 
@@ -56,29 +51,22 @@ Path = \\RutaDeServidor\EquipoPruebas
 Enabled = True
 ```
 
+**Requisitos**
+
+- Windows 10 o superior.
+- Acceso a las rutas de red del sistema de producción.
+- Python 3.9 o superior, con Flask y Waitress.
+
 ## Características
 
-### Búsqueda inteligente de logs
-
-- Modo dual: soporte para búsqueda en 2 servidores.
-- Lectura en tiempo real: identifica automáticamente el archivo de log más reciente en el servidor remoto y filtra la información relevante.
-- Visualización clara: muestra el ID del equipo de prueba, la hora, el status, la prueba y el resultado en una lista ordenada.
-
-### Historial extendido (PPID+)
-
-- Búsqueda profunda: puede rastrear un serial específico en logs de hace 7 hasta 30 días.
-
-### Gestión de debug y validaciones (PASS/FAIL)
-
-- Interacción directa: al hacer doble clic en un resultado se habilitan las acciones disponibles para ese serial.
-- Inyección de resultados:
-  - Generar FAIL: fuerza el fallo de una unidad y sube el log actualizado al servidor destino.
-  - Generar PASS: da el pase a una unidad.
-- Manejo de System ID (debug): detecta automáticamente los equipos de prueba en estado de depuración y solicita al usuario el ID correcto antes de procesar el log.
-
-### Auditoría y seguridad
-
-- Registro de eventos: cada acción queda registrada en un servidor central de auditoría con fecha, hora, usuario, IP, serial e ID del equipo de prueba utilizado.
+- Búsqueda inteligente de logs: modo dual para buscar en 2 servidores e identificación automática del archivo más reciente.
+- Historial extendido (PPID+): rastreo de un serial específico en logs de hace 7 hasta 30 días.
+- Gestión de debug y validaciones PASS/FAIL: generación de resultados y detección de equipos en estado de depuración.
+- Integración con Shopfloor: consulta el estado y la estación de la unidad antes y después de cada movimiento.
+- Control de accesos: registro y control de usuarios.
+- Logs de auditoría: registro de quién y cuándo generó un flujo.
+- Tablero de anuncios: notificaciones de cambios en la plataforma y consejos de uso.
+- Validación de datos: filtros para evitar capturar información incorrecta por error humano.
 
 ## Autor
 
