@@ -57,6 +57,18 @@ Enabled = True
 - Acceso a las rutas de red del sistema de producción.
 - Python 3.9 o superior, con Flask y Waitress.
 
+La aplicación se abre en el puerto 10001.
+
+**Estructura del proyecto**
+
+```text
+SerialInsight/
+├── ServerPass.py         # servidor Flask y lógica de la aplicación
+├── Modelo.ini            # modelos y rutas de entrada y salida
+├── templates/            # login y tablero
+└── static/               # CSS, JS y fuentes
+```
+
 ## Características
 
 - Búsqueda inteligente de logs: modo dual para buscar en 2 servidores e identificación automática del archivo más reciente.
